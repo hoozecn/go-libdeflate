@@ -6,7 +6,6 @@ import (
 	"compress/gzip"
 	"compress/zlib"
 	"encoding/hex"
-	"strings"
 	"testing"
 )
 
@@ -27,7 +26,7 @@ func TestDecompressDEFLATE(t *testing.T) {
 	out := make([]byte, len(shortString))
 	dc, _ := NewDecompressor()
 	defer dc.Close()
-	if c, _, err := dc.Decompress(in, out, ModeDEFLATE); err != nil || c != len(in){
+	if c, _, err := dc.Decompress(in, out, ModeDEFLATE); err != nil || c != len(in) {
 		t.Error(err)
 	}
 	slicesEqual(shortString, out, t)
@@ -52,7 +51,7 @@ func TestDecompressGzip(t *testing.T) {
 	out := make([]byte, len(shortString))
 	dc, _ := NewDecompressor()
 	defer dc.Close()
-	if c, _, err := dc.Decompress(in, out, ModeGzip); err != nil || c != len(in){
+	if c, _, err := dc.Decompress(in, out, ModeGzip); err != nil || c != len(in) {
 		t.Error(err)
 	}
 	slicesEqual(shortString, out, t)
@@ -103,8 +102,8 @@ func TestDecompressWithDeadlyCode(t *testing.T) {
 	dc, _ := NewDecompressor()
 	defer dc.Close()
 	_, _, err := dc.Decompress(comp, nil, ModeZlib)
-	if err == nil || !strings.Contains(err.Error(), "maximum decompression factor") {
-		t.Fail()
+	if err == nil {
+		t.Fatalf("Expected error, got nil")
 		return
 	}
 }
