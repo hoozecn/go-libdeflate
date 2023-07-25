@@ -1,6 +1,6 @@
 package libdeflate
 
-import "github.com/4kills/go-libdeflate/native"
+import "github.com/hoozecn/go-libdeflate/v2/native"
 
 // Compressor compresses data at the specified compression level.
 //

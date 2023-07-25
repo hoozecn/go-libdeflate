@@ -9,7 +9,7 @@ It is **significantly faster** (4-5 times) than Go's standard compress/zlib/gzip
 ```diff
 + If you start using this library, use V2.
 ```
-For a better user experience right from the start use V2 via `go get github.com/4kills/go-libdeflate/v2`. 
+For a better user experience right from the start use V2 via `go get github.com/hoozecn/go-libdeflate/v2`. 
 
 ## Table of Contents
 
