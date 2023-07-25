@@ -1,5 +1,10 @@
 # libdeflate (optimized zlib) for go
 
+_The ORIGIN of this repo: https://github.com/4kills/go-libdeflate_
+
+_linux/arm64 and dawin/arm64 supported_
+
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 This ultra fast Go zlib library wraps the [libdeflate](https://github.com/ebiggers/libdeflate) zlib-, gzip- and deflate-(de)compression library for Go, using cgo.
